@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Game extends JPanel {
+public class Game extends JPanel implements ActionListener{
 
     private class Tile {
         int x;
@@ -68,6 +68,11 @@ public class Game extends JPanel {
     public void placeFood() {
         food.x = random.nextInt(boardWidth / tileSize);  // 600/25= 24
         food.y = random.nextInt(boardHeight / tileSize);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
     }
 
 }
