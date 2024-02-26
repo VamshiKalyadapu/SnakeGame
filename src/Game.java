@@ -17,10 +17,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
     int boardWidth;
     int boardHeight;
-    int tileSize = 25;
+    int tileSize;
     Random random;
     int velocityX;
     int velocityY;
+    int score;
 
     Snake snake;
     Food food;
@@ -31,6 +32,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     Game(int boardWidth, int boardHeight) {
         this.boardWidth = boardWidth;
         this.boardHeight = boardHeight;
+
+        tileSize = 25;
+        score = 0;
 
         velocityX = 0;
         velocityY = 0;
@@ -69,9 +73,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         g.setFont(new Font("Arial", Font.PLAIN, 16));
         if (gameOver) {
             g.setColor(Color.red);
-            g.drawString("Game Over: " + String.valueOf(snake.body.size() - 1), tileSize - 16, tileSize);
+            g.drawString("Game Over! Score: " + String.valueOf(score), tileSize - 16, tileSize);
+            g.drawString("Press 'R' to restart", tileSize - 16, tileSize + 20);
         } else {
-            g.drawString("Score: " + String.valueOf(snake.body.size() - 1), tileSize - 16, tileSize);
+            g.drawString("Score: " + String.valueOf(score), tileSize - 16, tileSize);
+            
         }
 
     }
@@ -84,6 +90,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         if (collision(snake.body.get(0), food.position)) {
             snake.grow();
             food.placeFood(this);
+            score++;
         }
 
         snake.move(velocityX, velocityY);
@@ -117,7 +124,17 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && velocityX != -1) {
             velocityX = 1;
             velocityY = 0;
+        } else if (e.getKeyCode() == KeyEvent.VK_R && gameOver) {
+            restartGame();
         }
+    }
+
+    private void restartGame() {
+        snake.reset();
+        food.placeFood(this);
+        score = 0;
+        gameOver = false;
+        gameLoop.start();
     }
 
     @Override
