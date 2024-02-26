@@ -1,52 +1,72 @@
 
 ---
 
-# Snake Game
+# Snake Game in Java
 
-This is a simple Snake game implemented in Java using Swing for graphics and user interaction.
+## Introduction
 
-## How to Play
+This is a simple Snake Game implemented in Java using the Swing library. The game consists of four classes: `App`, `Game`, `Snake`, `Food`, and `Tile`. The `App` class initializes the game, the `Game` class manages the game logic and UI, the `Snake` class represents the snake, the `Food` class represents the food, and the `Tile` class is a utility class for representing positions.
 
-- Use the arrow keys (up, down, left, right) to control the direction of the snake.
-- The objective is to eat as much food as possible without colliding with the snake's own body or the boundaries of the game board.
-- Eating food increases the length of the snake and earns points.
-- The game ends when the snake collides with itself or the boundaries of the game board.
+## Getting Started
 
-## Installation
+### Prerequisites
 
-- Clone or download the repository to your local machine.
-- Make sure you have Java Development Kit (JDK) installed.
-- Compile the Java files: `javac *.java`
-- Run the game: `java App`
+- Java Development Kit (JDK) installed
+- Integrated Development Environment (IDE) like Visual Studio Code
 
-## Controls
+### Running the Game
 
-- Use the arrow keys to control the direction of the snake:
-  - Up arrow: Move the snake upwards.
-  - Down arrow: Move the snake downwards.
-  - Left arrow: Move the snake leftwards.
-  - Right arrow: Move the snake rightwards.
+1. Clone the repository to your local machine.
 
-## Features
+    ```bash
+    git clone https://github.com/your-username/snake-game-java.git
+    ```
 
-- **Snake Movement:** The snake moves continuously in the direction specified by the player.
-- **Food Generation:** Food is randomly generated on the game board for the snake to eat.
-- **Scoring:** The score increases every time the snake eats food.
-- **Game Over:** The game ends when the snake collides with itself or the boundaries of the game board.
+2. Open the project in your preferred IDE (e.g., Visual Studio Code).
 
-## Known Issues
+3. Compile and run the `App.java` file, which contains the `main` method.
 
-- Currently, there are no known issues. Please report any bugs or problems you encounter.
+4. The Snake Game window will appear, and you can control the snake using arrow keys.
 
-## Future Improvements
+## Class Overview
 
-- Implement levels of increasing difficulty.
-- Add sound effects and background music.
-- Implement a high score system.
-- Allow the player to customize the appearance of the snake and the game board.
+### 1. App
 
-## Credits
+- **Description:** The main class with the `main` method to initialize and run the game.
+- **File:** `App.java`
 
-- This game was created by Vamshi Kalyadapu as a Java programming project.
+### 2. Game
 
----
+- **Description:** Manages the game logic, UI, and main game loop.
+- **File:** `Game.java`
+
+### 3. Snake
+
+- **Description:** Represents the snake, controls its movement, and handles collisions.
+- **File:** `Snake.java`
+
+### 4. Food
+
+- **Description:** Represents the food that the snake can eat.
+- **File:** `Food.java`
+
+### 5. Tile
+
+- **Description:** Utility class for representing positions on the game board.
+- **File:** `Tile.java`
+
+## Game Rules
+
+- The player controls a snake on a grid.
+- The snake grows longer by eating food.
+- The game ends if the snake collides with itself or the game boundaries.
+
+## Acknowledgments
+
+This project is based on a tutorial and serves as a beginner-friendly implementation of a classic Snake Game in Java.
+
+## Created by
+
+Vamshi Kalyadapu
+
+--- 
