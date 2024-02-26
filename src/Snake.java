@@ -10,6 +10,11 @@ public class Snake {
         body.add(new Game.Tile(5, 5)); // Initial position of the snake head
     }
 
+    public void reset() {
+        body.clear();
+        body.add(new Game.Tile(5, 5));
+    }
+
     void move(int velocityX, int velocityY) {
         for (int i = body.size() - 1; i > 0; i--) {
             Game.Tile currentBodyPart = body.get(i);
@@ -48,4 +53,5 @@ public class Snake {
     private boolean collision(Game.Tile tile1, Game.Tile tile2) {
         return tile1.x == tile2.x && tile1.y == tile2.y;
     }
+
 }
