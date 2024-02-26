@@ -69,10 +69,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         g.setFont(new Font("Arial", Font.PLAIN, 16));
         if (gameOver) {
             g.setColor(Color.red);
-            g.drawString("Game Over: " + String.valueOf(snake.body.size()), tileSize - 16, tileSize);
+            g.drawString("Game Over: " + String.valueOf(snake.body.size() - 1), tileSize - 16, tileSize);
         } else {
-            g.drawString("Score: " + String.valueOf(snake.body.size()), tileSize - 16, tileSize);
+            g.drawString("Score: " + String.valueOf(snake.body.size() - 1), tileSize - 16, tileSize);
         }
+
     }
 
     public boolean collision(Tile tile1, Tile tile2) {
