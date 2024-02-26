@@ -1,12 +1,11 @@
 import javax.swing.JFrame;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
         int boardWidth = 600;
-        int boardHeight = boardWidth;
+        int boardHeight = 600;
 
-        JFrame frame = new JFrame("Snake");
+        JFrame frame = new JFrame("Snake Game");
         frame.setSize(boardWidth, boardHeight);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
